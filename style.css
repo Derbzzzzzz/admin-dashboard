@@ -42,13 +42,55 @@ body{
 /*HEADER SECTION*/
 
 header{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 200px, 1fr;
+}
 
+/*HEADER > SEARCH*/
+
+header>.search{
+    display: flex;
+    align-items: center;
+}
+
+/*HEADER > PROFILE-HEADER*/
+
+header>.profile-header{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/*HEADER > PROFILE-MAIN*/
+
+header>.profile-main{
+    display: flex;
+    gap: 15px;
+}
+
+.profile-main-intro{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*HEADER > BUTTONS*/
+
+header>.buttons{
+    display: flex;
+    gap: 10px;
 }
 
 /*MAIN SECTION*/
 
 main{
+    padding: 10px;
+}
 
+.main-container{
+    display: flex;
 }
 
 /*MAIN > PROJECT SECTION*/
