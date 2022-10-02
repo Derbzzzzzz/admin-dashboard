@@ -1,10 +1,70 @@
+/* General CSS */
+
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 
+.circle-image{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Start of Organized CSS */
+
+body{
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+    margin: 0px;
+}
+
+/*SIDEBAR SECTION*/
+
+.sidebar{
+    grid-row: 1 / 3;
+    background-image: linear-gradient(to bottom left, rgb(221, 0, 255), purple);
+}
+
 .logo, .nav>div, .important-nav>div{
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+
+
+/*HEADER SECTION*/
+
+header{
+
+}
+
+/*MAIN SECTION*/
+
+main{
+
+}
+
+/*MAIN > PROJECT SECTION*/
+
+.project-section{
+
+}
+
+/*MAIN > ANNOUNCEMENT-SECTION*/
+
+.announcement-section{
+
+}
+
+/*MAIN > TRENDING-SECTION*/
+
+.trending-section{
+
 }
