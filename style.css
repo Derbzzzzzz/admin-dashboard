@@ -26,9 +26,16 @@ html{
   height: 45px;
   border-radius: 50%;
 
+  scale: 1.05;
+
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+.circle-image:hover{
+    scale: 1.1;
+    cursor: pointer;
 }
 
 /*This Helps these pop out! Asset from Katerina Mitova*/
@@ -44,7 +51,7 @@ html{
 
 body{
     display: grid;
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 170px 1fr;
     margin: 0px;
 }
 
@@ -65,7 +72,7 @@ body{
     position: fixed;
     height: 100vh;
     box-sizing: border-box;
-    width: 180px;
+    width: 170px;
 }
 
 .logo, .nav>div, .important-nav>div{
@@ -77,8 +84,12 @@ body{
 }
 
 .logo:hover, .nav>div:hover, .important-nav>div:hover{
-    background-color: var(--color-2);
+    background-image: linear-gradient(to bottom left, var(--color-3), var(--color-2));
     cursor: pointer;
+}
+
+.logo:hover div, .nav>div:hover div, .important-nav>div:hover div{
+    scale: 1.1;
 }
 
 .nav-logo, .important-nav-logo{
@@ -140,11 +151,13 @@ input, input:focus{
     border: 0px;
     flex-grow: 1;
     margin-right: 20px;
-    max-width: 200px;
+    max-width: 400px;
     padding: 7px;
     padding-top: 10px;
     outline: none;
     font-weight: 400;
+    padding-left: 10px;
+    font-size: 1rem;
 }
 
 ::placeholder{
@@ -202,7 +215,8 @@ header>.buttons{
     font-size: 80%;
 }
 
-.buttons>.button:hover, .project:hover{
+.buttons>.button:hover, .project:hover, .announcement-container:hover, .trending-container:hover{
+    scale: 1.03;
     cursor: pointer;
 }
 
@@ -239,12 +253,12 @@ main{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
-    width: 350px;
+    width: 320px;
 }
 
 .project{
     height: 133px;
-    width: 330px;
+    width: 320px;
     padding: 10px;
     background-color: var(--color-4);
     border-radius: 10px;
@@ -254,12 +268,12 @@ main{
 }
 
 .project-name{
-    color: var(--color-2);
+    color: var(--color-1);
     font-size: 1.25rem;
 }
 
 .project-desc{
-    color: var(--color-3);
+    color: var(--color-2);
     font-size: 1rem;
 }
 
@@ -280,12 +294,12 @@ main{
 }
 
 .announcement-name{
-    color: var(--color-2);
+    color: var(--color-1);
     font-size: 1rem;
 }
 
 .announcement-desc{
-    color: var(--color-3);
+    color: var(--color-2);
     font-size: 0.75rem;
 }
 
@@ -322,13 +336,13 @@ main{
 }
 
 .trending-name{
-    color: var(--color-2);
-    font-size: 1rem;
+    color: var(--color-1);
+    font-size: 1.25rem;
 }
 
 .trending-desc{
-    color: var(--color-3);
-    font-size: 0.75rem;
+    color: var(--color-2);
+    font-size: 1rem;
 }
 
 
