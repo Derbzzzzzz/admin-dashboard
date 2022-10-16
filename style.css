@@ -215,6 +215,10 @@ header>.buttons{
     font-size: 80%;
 }
 
+.buttons>.button:hover{
+    background-image: linear-gradient(to bottom left, var(--color-3), var(--color-2));
+}
+
 .buttons>.button:hover, .project:hover, .announcement-container:hover, .trending-container:hover{
     scale: 1.03;
     cursor: pointer;
