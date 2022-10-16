@@ -2,13 +2,17 @@
 
 :root{
     --color-1: #28104E;
-    --color-2: #6237A0;
-    --color-3: #9754CB;
-    --color-4: #DEACF5;
+    --color-2: #8e5dd2;
+    --color-3: #c487f2;
+    --color-4: #e8c1fa;
 }
+
+
 
 html{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--color-1);
 }
 
 .material-icons.md-18 { font-size: 18px; }
@@ -18,8 +22,8 @@ html{
 
 .circle-image{
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
 
   background-repeat: no-repeat;
@@ -27,15 +31,29 @@ html{
   background-size: cover;
 }
 
+/*This Helps these pop out! Asset from Katerina Mitova*/
+.project, .announcement-container, .trending-container{
+    border-left: 2px solid var(--color-1);
+    border-top: 2px solid var(--color-1);
+    border-right: 4px solid var(--color-1);
+    border-bottom: 4px solid var(--color-1);
+    box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 5px 8px 
+}
+
 /* Start of Organized CSS */
 
 body{
     display: grid;
-    grid-template-columns: 175px 1fr;
+    grid-template-columns: 180px 1fr;
     margin: 0px;
 }
 
 /*SIDEBAR SECTION*/
+
+.sidebar-container{
+    grid-row: 1/3;
+    height: 100vh;
+}
 
 .sidebar{
     grid-row: 1 / 3;
@@ -43,15 +61,24 @@ body{
     color: var(--color-1);
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    padding: 10px;
+    gap: 70px;
+    position: fixed;
+    height: 100vh;
+    box-sizing: border-box;
+    width: 180px;
 }
 
 .logo, .nav>div, .important-nav>div{
     display: flex;
     align-items: center;
     gap: 20px;
-    font-size: 20px;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.logo:hover, .nav>div:hover, .important-nav>div:hover{
+    background-color: var(--color-2);
+    cursor: pointer;
 }
 
 .nav-logo, .important-nav-logo{
@@ -61,7 +88,6 @@ body{
 .nav, .important-nav{
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .sidebar>div{
@@ -72,13 +98,16 @@ body{
 /*HEADER SECTION*/
 
 header{
-    padding: 10px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 200px, 1fr;
     background-color: var(--color-2);
     background-color: var(--color-4);
     font-size: 20px;
+    box-shadow: inset 0 -4px 3px var(--color-3)
 }
 
 /*HEADER > SEARCH*/
@@ -94,8 +123,36 @@ header>.search{
 }
 
 .search-bar{
-
+    flex-grow: 1;
+    display: flex;
 }
+
+form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+input, input:focus{
+    background-color: var(--color-3);
+    color: var(--color-4);
+    border-radius: 20px;
+    border: 0px;
+    flex-grow: 1;
+    margin-right: 20px;
+    max-width: 200px;
+    padding: 7px;
+    padding-top: 10px;
+    outline: none;
+    font-weight: 400;
+}
+
+::placeholder{
+    color: var(--color-4);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
 
 /*HEADER > PROFILE-HEADER*/
 
@@ -116,8 +173,8 @@ header>.profile-main{
 }
 
 .profile-main-picture{
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
 }
 
 .profile-main-intro{
@@ -137,58 +194,147 @@ header>.buttons{
 }
 
 .buttons>.button{
-    border: solid 2px var(--color-2);
     background-color: var(--color-3);
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 20px;
+    padding: 10px;
     text-align: center;
     width: 25%;
     font-size: 80%;
 }
 
+.buttons>.button:hover, .project:hover{
+    cursor: pointer;
+}
+
 /*MAIN SECTION*/
 
 main{
-    padding: 10px;
-    background-color: var(--color-1);
+    padding: 20px;
+    padding-top: 0px;
+    background-color: var(--color-2);
     color: var(--color-4);
 }
 
 .main-container{
     display: flex;
     gap: 20px;
+    justify-content: space-around;
 }
 
 .main-sidebar{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
+    flex-grow: 1;
+    max-width: 400px;
 }
 
 /*MAIN > PROJECT SECTION*/
 
 .project-section{
+}
 
+.project-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 350px;
+}
+
+.project{
+    height: 133px;
+    width: 330px;
+    padding: 10px;
+    background-color: var(--color-4);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-name{
+    color: var(--color-2);
+    font-size: 1.25rem;
+}
+
+.project-desc{
+    color: var(--color-3);
+    font-size: 1rem;
 }
 
 /*MAIN > ANNOUNCEMENT-SECTION*/
 
 .announcement-section{
+}
 
+.announcement-container{
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--color-4);
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+}
+
+.announcement-name{
+    color: var(--color-2);
+    font-size: 1rem;
+}
+
+.announcement-desc{
+    color: var(--color-3);
+    font-size: 0.75rem;
 }
 
 /*MAIN > TRENDING-SECTION*/
 
-.trending-section{
+.trending-section {
+
 }
+
 
 .trending-container{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     gap: 15px;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-4);
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
 }
 
 .trending{
     display: flex;
     gap: 10px;
+}
+
+.trending-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trending-name{
+    color: var(--color-2);
+    font-size: 1rem;
+}
+
+.trending-desc{
+    color: var(--color-3);
+    font-size: 0.75rem;
+}
+
+
+@media (min-width: 1300px){
+    .project-container{
+        box-sizing: border-box;
+        width: 750px;
+    }
 }
